@@ -15,11 +15,4 @@ License
 
 This code is under MIT license. 
 
-As any other Rails application:
-
-    Modify config/database.yml to your own settings;
-    Run rake db:migrate to generate the tables;
-    Start the application as you normally would.
-    
-    
 Copyright (c) 2013 Thant Shwe Aung, released under the MIT license
