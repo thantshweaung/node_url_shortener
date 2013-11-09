@@ -1,0 +1,36 @@
+!!!5
+html
+	head
+		title #{title}
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.css')
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
+		link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+	body
+		div.container
+			div.title
+				h1 #{title}
+			div.input-form
+				form(action='/', method='post' enctype='multipart/form-data')
+					legend Enter Url which you want to make short form
+					div.input-prepend.input-append
+						span.add-on https://
+						input(type='text', name='long_url', class='span7',placeholder='Enter URL')
+						button(type='submit', class='btn btn-success') Submit
+			br
+			div.wrap
+				table.table-show.table-striped.table-bordered.span10
+					tr
+						th	#
+						th	ordinary url
+						th  shortern url
+					each link in links
+						tr
+							td #{link.id}
+							td 
+								a(href=link.long_url) #{link.long_url}
+							td 
+								a(href=link.short_url) localhost/#{link.short_url}
+						
+				
