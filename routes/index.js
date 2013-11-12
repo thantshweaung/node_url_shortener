@@ -1,4 +1,3 @@
-
 /*
  * GET home page.
  */
@@ -42,5 +41,7 @@ function convertRandom(){
 	var random = Math.random().toString(36).substring(2);
 	currentTime =  hours + minutes + seconds;
 	random = random.slice(-5) + currentTime;
+	// 貰ったランダムへCrytoを使って変更する
+	random = crypto.createHash('md5').update(random).digest("hex").slice(-6);  
 	return random;
 };
