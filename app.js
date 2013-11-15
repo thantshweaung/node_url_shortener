@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -34,15 +33,3 @@ app.get('/:short_url', routes.redirectUrl);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
-
-// 乱数を作成機能
-function convertRandom(){
-	var currentTime = new Date();
-	var hours = currentTime.getHours();
-	var minutes = currentTime.getMinutes();
-	var seconds = currentTime.getSeconds();
-	var random = Math.random().toString(36).substring(2);
-	currentTime =  hours + minutes + seconds;
-	random = random.slice(-5) + currentTime;
-	return random;
-}
